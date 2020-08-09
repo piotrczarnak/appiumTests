@@ -22,6 +22,7 @@ public class Driver {
     }
 
     public void get(String address) {
+        driver.close();
         driver.get(address);
 
     }
