@@ -23,6 +23,8 @@ public class Driver {
 
     public void get(String address) {
         driver.get(address);
+        driver.close();
     }
+
 
 }

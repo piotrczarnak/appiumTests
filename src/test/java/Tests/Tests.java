@@ -10,5 +10,6 @@ public class Tests {
         Driver start = new Driver();
         start.createDriver("chrome");
         start.get("http://automationpractice.com/index.php");
+
     }
 }
