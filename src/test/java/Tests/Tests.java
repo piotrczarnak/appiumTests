@@ -1,15 +1,30 @@
 package Tests;
 
 import Code.Driver;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
+import static junit.framework.TestCase.assertEquals;
 
 public class Tests {
 
-    @Test
-    public void startMainSite() {
-        Driver start = new Driver();
-        start.createDriver("chrome");
-        start.get("http://automationpractice.com/index.php");
+    Driver driver = null;
 
+    @Before
+    public void runApp() {
+        driver = new Driver();
+        driver.startApp();
+    }
+
+    @Test
+    public void testOpenMenu() {
+        driver.clickBtnNext();
+        assertEquals("Hello second fragment", driver.getSecondTextText());
+    }
+
+    @After
+    public void closeApp() {
+        driver.closeApp();
     }
 }
